@@ -137,9 +137,9 @@ function createResultV2(events, totems) {
         totems.forEach(({name, hash}) => {
             const code = getPrediction(event, hash)
             const result = code.split('').reduce(reducer, 0) % 9
-            if(result <= 4) {
+            if(result <= 3) {
                 totemsPredictions.push({name, prediction: 'home'})
-            } else if(result <= 7) {
+            } else if(result <= 6) {
                 totemsPredictions.push({name, prediction: 'away'})
             } else if(event.type === 'NBA' || event.type === 'NHL') {
                 totemsPredictions.push({name, prediction: 'away'})
